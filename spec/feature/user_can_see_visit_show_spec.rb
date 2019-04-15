@@ -6,7 +6,7 @@ describe "user can visit user show page" do
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
         # binding.pry
-        visit user_path(user)
+        visit user_path(user.id)
 
     end  
     
