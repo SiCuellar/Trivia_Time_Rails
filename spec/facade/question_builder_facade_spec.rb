@@ -11,6 +11,10 @@ describe "question builder facade" do
         qfacade = QuestionBuilderFacade.new
 
         expect(qfacade.questions).to be_an(Array)
-        # expect(qfacade.questions.first).to be_an_instance_of(Question)
+        expect(qfacade.questions.first).to be_an_instance_of(Question)
+
+        qfacade.questions.each do |q|
+            expect(q).to be_a(Question)
+        end
     end 
 end 
