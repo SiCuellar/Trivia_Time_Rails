@@ -7,13 +7,35 @@ describe "question builder facade" do
         expect(qfacade).to be_an_instance_of(QuestionBuilderFacade)
     end 
     
-    it '#questions' do 
+    it '#easy_film_questions' do 
         qfacade = QuestionBuilderFacade.new
 
-        expect(qfacade.questions).to be_an(Array)
-        expect(qfacade.questions.first).to be_an_instance_of(Question)
+        expect(qfacade.easy_film_questions).to be_an(Array)
+        expect(qfacade.easy_film_questions.first).to be_an_instance_of(Question)
 
-        qfacade.questions.each do |q|
+        qfacade.easy_film_questions.each do |q|
+            expect(q).to be_a(Question)
+        end
+    end 
+    
+    it '#medium_film_questions' do 
+        qfacade = QuestionBuilderFacade.new
+
+        expect(qfacade.medium_film_questions).to be_an(Array)
+        expect(qfacade.medium_film_questions.first).to be_an_instance_of(Question)
+
+        qfacade.medium_film_questions.each do |q|
+            expect(q).to be_a(Question)
+        end
+    end 
+    
+    it '#hard_film_questions' do 
+        qfacade = QuestionBuilderFacade.new
+
+        expect(qfacade.hard_film_questions).to be_an(Array)
+        expect(qfacade.hard_film_questions.first).to be_an_instance_of(Question)
+
+        qfacade.hard_film_questions.each do |q|
             expect(q).to be_a(Question)
         end
     end 
