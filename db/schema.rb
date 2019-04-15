@@ -17,7 +17,9 @@ ActiveRecord::Schema.define(version: 2019_04_15_153519) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.text "email"
+    t.string "google_token"
+    t.string "email"
+    t.text "google_client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
