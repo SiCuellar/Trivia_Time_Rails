@@ -1,9 +1,7 @@
 class TriviaService 
 
   def get_easy_film_questions
-    # return [] unless id
     get_json("?amount=50&category=11&difficulty=easy")[:results]
-    # binding.pry
   end
   
   def get_medium_film_questions
