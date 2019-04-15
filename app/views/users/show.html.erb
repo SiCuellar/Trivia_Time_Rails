@@ -1,0 +1,4 @@
+Welcome, <%= @current_user.name %>
+<%= @easy_film_questions.each do |question|%>
+Question: <%= question.question  %>
+<% end %>

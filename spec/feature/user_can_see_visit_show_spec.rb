@@ -8,12 +8,8 @@ describe "user can visit user show page" do
         # binding.pry
         visit "users/#{user.id}"
         # visit user_path(user)
-        expect(page).to have_content("#{user.name}")
-        # expect(page).to have_content("By: #{artist.band_name}")
+        expect(page).to have_content("Welcome, #{user.name}")
+        # expect(page).to have_link("Film Trivia")
 
     end  
-    
-    # it "can see stats section" do 
-
-    # end 
 end 
