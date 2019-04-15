@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: "welcome#index"
+  get 'dashboard', to: "users#show"
+
 
   get '/register', to: redirect('/auth/google_oauth2'), as: 'register'
   get '/auth/:provider/callback', to: 'sessions#create'
@@ -12,6 +14,6 @@ Rails.application.routes.draw do
 
 
   
-  resources :users, only: [:show]
+  # resources :users, only: [:show]
 
 end
