@@ -1,5 +1,6 @@
 [![Waffle.io - Columns and their card count](https://badge.waffle.io/SiCuellar/Trivia_Time_Rails.svg?columns=all)](https://waffle.io/SiCuellar/Trivia_Time_Rails)
 
+https://movie-trivia-time007.herokuapp.com/
 ## Trivia Time
 
 Trivia Time is an app designed to play Film or Movie based Trivia.  
