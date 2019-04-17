@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+- 2.5.3
+
+services:
+  - postgresql
+before_install:
+  - gem install bundler
+before_script:
+  - bundle exec rake db:{drop,create,migrate}
+script:
+  - bundle exec rspec
+
+  # env:
+  # - DB=postgres
+  # - SH=bash
+  # - PACKAGE_VERSION="1.0.*"
