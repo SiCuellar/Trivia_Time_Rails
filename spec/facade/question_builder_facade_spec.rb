@@ -48,4 +48,14 @@ describe "question builder facade" do
 
         expect(qfacade.clean_question(q)).to eq(clean)
     end
+    
+    it "#display_choices" do
+        correct = "Jack Russel Terrier"
+        incorrect = ["Rat Terrier", "Labrador", "Huskey"]
+        qfacade = QuestionBuilderFacade.new
+
+        expect(qfacade.display_choices(correct, incorrect)).to be_an(Array)
+        expect(qfacade.display_choices(correct, incorrect).count).to eq(4)
+        expect(qfacade.display_choices(correct, incorrect)).to include("Jack Russel Terrier")
+    end
 end 

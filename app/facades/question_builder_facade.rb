@@ -4,7 +4,6 @@ class QuestionBuilderFacade
         question_obj = questions_data.map do |s_question_data|
             Question.new(s_question_data)
         end
-        # binding.pry
     end 
     
     def medium_film_questions 
