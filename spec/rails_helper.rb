@@ -35,7 +35,7 @@ RSpec.configure do |config|
   config.include(Shoulda::Matchers::ActiveModel, type: :model)
   config.include(Shoulda::Matchers::ActiveRecord, type: :model)
 
-  config.include FactoryBot::Syntax::Methods
+  # config.include FactoryBot::Syntax::Methods
   config.include Capybara::DSL
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -65,4 +65,20 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+end
+
+RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
+  config.after(:each) do
+    # reset all FactoryBot sequences after each test
+    FactoryBot.reload
+  end
+end
+
+RSpec.configure do |config|
+  # Make the rails routes available in all specs
+  config.include Rails.application.routes.url_helpers
+  # or
+  # Make them available only in acceptance specs
+  config.include Rails.application.routes.url_helpers, :type => :acceptance
 end

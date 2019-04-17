@@ -39,4 +39,23 @@ describe "question builder facade" do
             expect(q).to be_a(Question)
         end
     end 
+
+    it "#clean_question" do
+        q = "Which of the following was not one of &quot;The Magnificent Seven&quot;?"
+        qfacade = QuestionBuilderFacade.new
+
+        clean = ('Which of the following was not one of "The Magnificent Seven"?')
+
+        expect(qfacade.clean_question(q)).to eq(clean)
+    end
+    
+    it "#display_choices" do
+        correct = "Jack Russel Terrier"
+        incorrect = ["Rat Terrier", "Labrador", "Huskey"]
+        qfacade = QuestionBuilderFacade.new
+
+        expect(qfacade.display_choices(correct, incorrect)).to be_an(Array)
+        expect(qfacade.display_choices(correct, incorrect).count).to eq(4)
+        expect(qfacade.display_choices(correct, incorrect)).to include("Jack Russel Terrier")
+    end
 end 
