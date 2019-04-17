@@ -40,10 +40,12 @@ describe "question builder facade" do
         end
     end 
 
-    it "#question_maker" do
+    it "#clean_question" do
+        q = "Which of the following was not one of &quot;The Magnificent Seven&quot;?"
         qfacade = QuestionBuilderFacade.new
 
-        expect(qfacade.easy_film_questions).to be_an(Array)
+        clean = ('Which of the following was not one of "The Magnificent Seven"?')
 
+        expect(qfacade.clean_question(q)).to eq(clean)
     end
 end 
