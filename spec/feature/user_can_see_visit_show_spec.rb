@@ -7,6 +7,5 @@ describe "user can visit user show page" do
 
         visit dashboard_path(user)
         expect(page).to have_content("Welcome, #{user.name}")
-        save_and_open_page
     end  
 end 
