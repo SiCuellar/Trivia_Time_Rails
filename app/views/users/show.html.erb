@@ -1,4 +1,6 @@
-Welcome, <%= @current_user.name %>
-<%= @easy_film_questions.each do |question|%>
-Question: <%= question.question  %>
+Welcome, <%= @current_user.name %> <br>
+<%= @q_builder_facade.easy_film_questions.each do |question|%>
+Question: <%= @q_builder_facade.clean_question(question.question)  %> <br>
+Choices: <%= @q_builder_facade.display_choices(question.correct_answer, question.incorrect_answers) %> <br>
+<br>
 <% end %>

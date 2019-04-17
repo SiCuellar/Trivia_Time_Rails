@@ -39,4 +39,11 @@ describe "question builder facade" do
             expect(q).to be_a(Question)
         end
     end 
+
+    it "#question_maker" do
+        qfacade = QuestionBuilderFacade.new
+
+        expect(qfacade.easy_film_questions).to be_an(Array)
+
+    end
 end 
