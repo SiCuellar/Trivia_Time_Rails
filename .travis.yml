@@ -6,6 +6,6 @@ before_install:
   - gem install bundler
 
 script:
-  — bundle exec rake db:create
-  — bundle exec rake db:migrate
-  — bundle exec rspec
+  — db:create
+  — db:migrate
+  — rspec
